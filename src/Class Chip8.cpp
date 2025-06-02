@@ -16,8 +16,4 @@ public:
 	uint32_t video[64 * 32]{};
 	uint16_t opcode;
 };
-Chip8::Chip8()
-{
-	// Initialize PC
-	pc = START_ADDRESS;
-}
+
