@@ -3,15 +3,17 @@
 class Chip8
 {
 Chip8::Chip8()
-{
 	: randGen(std::chrono::system_clock::now().time_since_epoch().count())
-	// Initialize PC
+
+{	// Initialize PC
 	pc = START_ADDRESS;
 	// Load fonts into memory
 	for (unsigned int i = 0; i < FONTSET_SIZE; ++i)
 	{
 		memory[FONTSET_START_ADDRESS + i] = fontset[i];
 	}
+	// Initialize RNG
+		randByte = std::uniform_int_distribution<uint8_t>(0, 255U);
 }
 
 public:
