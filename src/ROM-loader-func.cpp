@@ -28,3 +28,8 @@ void Chip8::LoadROM(char const* filename)
 		delete[] buffer;
 	}
 }
+Chip8::Chip8()
+{
+	// Initialize PC
+	pc = START_ADDRESS;
+}
