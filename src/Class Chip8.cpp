@@ -2,6 +2,17 @@
 
 class Chip8
 {
+Chip8::Chip8()
+{
+	: randGen(std::chrono::system_clock::now().time_since_epoch().count())
+	// Initialize PC
+	pc = START_ADDRESS;
+	// Load fonts into memory
+	for (unsigned int i = 0; i < FONTSET_SIZE; ++i)
+	{
+		memory[FONTSET_START_ADDRESS + i] = fontset[i];
+	}
+}
 
 public:
 	uint8_t registers[16]{};
