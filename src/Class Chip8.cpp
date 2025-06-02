@@ -2,6 +2,7 @@
 
 class Chip8
 {
+
 public:
 	uint8_t registers[16]{};
 	uint8_t memory[4096]{};
@@ -15,3 +16,8 @@ public:
 	uint32_t video[64 * 32]{};
 	uint16_t opcode;
 };
+Chip8::Chip8()
+{
+	// Initialize PC
+	pc = START_ADDRESS;
+}
