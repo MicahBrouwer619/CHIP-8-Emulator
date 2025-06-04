@@ -74,3 +74,51 @@ void Chip8::OP_7xkk()
 
 	registers[Vx] += byte;
 }
+//set Vx=Vy
+void Chip8::OP_8xy0()
+{
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+	uint8_t Vy = (opcode & 0x00F0u) >> 4u;
+
+	registers[Vx] = registers[Vy];
+}
+//set Vx=Vx|Vy
+void Chip8::OP_8xy1()
+{
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+	uint8_t Vy = (opcode & 0x00F0u) >> 4u;
+
+	registers[Vx] |= registers[Vy];
+}
+//set Vx=Vx&Vy
+void Chip8::OP_8xy2()
+{
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+	uint8_t Vy = (opcode & 0x00F0u) >> 4u;
+
+	registers[Vx] &= registers[Vy];
+}
+//set Vx=Vx^Vy
+void Chip8::OP_8xy3()
+{
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+	uint8_t Vy = (opcode & 0x00F0u) >> 4u;
+
+	registers[Vx] ^= registers[Vy];
+}
+//set Vx=Vx+Vy, set VF=0 when carry, set VF=1 when not carry
+void Chip8::OP_8xy4()
+{
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+	uint8_t Vy = (opcode & 0x00F0u) >> 4u;
+
+	if (registers[Vx] > (0xFF - registers[Vy]))
+	{
+		registers[0xF] = 1; // carry
+	}
+	else
+	{
+		registers[0xF] = 0; // no carry
+	}
+	registers[Vx] += registers[Vy];
+}
