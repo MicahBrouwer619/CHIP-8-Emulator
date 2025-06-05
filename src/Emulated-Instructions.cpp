@@ -247,3 +247,15 @@ void Chip8::OP_Dxyn()
 		}
 	}
 }
+//skip next instruction if key Vx is pressed
+void Chip8::OP_Ex9E()
+{
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+
+	uint8_t key = registers[Vx];
+
+	if (keypad[key])
+	{
+		pc += 2;
+	}
+}
