@@ -122,3 +122,26 @@ void Chip8::OP_8xy4()
 	}
 	registers[Vx] += registers[Vy];
 }
+//set Vx=Vx-Vy, set VF=0 when borrow, set VF=1 when not borrow
+void Chip8::OP_8xy5(){
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+	uint8_t Vy = (opcode & 0x00F0u) >> 4u;
+
+	if (registers[Vx] < registers[Vy])
+	{
+		registers[0xF] = 0; // borrow
+	}
+	else
+	{
+		registers[0xF] = 1; // no borrow
+	}
+	registers[Vx] -= registers[Vy];
+}
+//set Vx=Vx SHR 1
+void Chip8::OP_8xy6()
+{
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+
+	registers[0xF] = registers[Vx] & 0x01; // store least significant bit in VF
+	registers[Vx] >>= 1; // shift right
+}
