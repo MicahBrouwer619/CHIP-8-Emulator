@@ -2,8 +2,9 @@
 
 const unsigned int START_ADDRESS = 0x200;
 const unsigned int FONTSET_START_ADDRESS = 0x50;
+const unsigned int FONTSET_SIZE = 80;
 
-
+#include "Chip8ClassStructure.hpp"
 void Chip8::LoadROM(char const* filename)
 {
 	// Open the file as a stream of binary and move the file pointer to the end
