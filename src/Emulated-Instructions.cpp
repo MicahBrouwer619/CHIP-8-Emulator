@@ -2,6 +2,9 @@
 #include <cstring> // for memset
 #include <cstdint> // for uint8_t, uint16_t, etc.
 #include <cstdlib> // for rand, if used elsewhere
+#include <random> // for std::default_random_engine, std::uniform_int_distribution
+#include <iostream> // for debugging purposes, if needed
+#include "Chip8.cpp"
 
 //clear the routine
 void Chip8::OP_00E0()
@@ -388,4 +391,45 @@ void Chip8::OP_Fx18()
 	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
 
 	soundTimer = registers[Vx];
+}
+//set I=I+Vx
+void Chip8::OP_Fx1E()
+{
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+
+	index += registers[Vx];
+}
+//set I=location of sprite for digit Vx
+void Chip8::OP_Fx29()
+{
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+	uint8_t digit = registers[Vx];
+
+	index = FONTSET_START_ADDRESS + (5 * digit);
+}
+//store BCD representation of Vx in memory at I, I+1, I+2
+void Chip8::OP_Fx33()
+{
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+	uint8_t value = registers[Vx];
+
+	// Ones-place
+	memory[index + 2] = value % 10;
+	value /= 10;
+
+	// Tens-place
+	memory[index + 1] = value % 10;
+	value /= 10;
+
+	// Hundreds-place
+	memory[index] = value % 10;
+}//store V0-Vx in memory starting at I
+void Chip8::OP_Fx55()
+{
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+
+	for (uint8_t i = 0; i <= Vx; ++i)
+	{
+		memory[index + i] = registers[i];
+	}
 }
