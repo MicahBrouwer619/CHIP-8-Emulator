@@ -12,13 +12,13 @@ void Chip8::Cycle()
 	// Decode and Execute
 	((*this).*(table[(opcode & 0xF000u) >> 12u]))();
 
-	// Decrement the delay timer if it's been set
+	// Decrement the delay timer 
 	if (delayTimer > 0)
 	{
 		--delayTimer;
 	}
 
-	// Decrement the sound timer if it's been set
+	// Decrement the sound timer 
 	if (soundTimer > 0)
 	{
 		--soundTimer;
