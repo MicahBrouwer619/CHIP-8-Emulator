@@ -1,6 +1,6 @@
 # CHIP-8-Emulator
 
-This project is a basic chip emulator for development later on in an NES enviornemnt.
+This project is a basic chip emulator for development later on in a rom game enviornemnt.
 The short description of chip 8 and it's components are as follows:
 * 16 8 bit registers
 * 4k bytes of memory
@@ -11,4 +11,4 @@ The short description of chip 8 and it's components are as follows:
 * 8 bit delay timer
 * 8 bit sound timer
 
-The goal is to have it be able to load rom files and function as an emulator to run old games, and possibly write new ones.
+The goal is to have it be able to load rom files and function as an emulator to run old games, and possibly newly written new ones.
