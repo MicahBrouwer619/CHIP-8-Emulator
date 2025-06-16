@@ -11,4 +11,4 @@ The short description of chip 8 and it's components are as follows:
 * 8 bit delay timer
 * 8 bit sound timer
 
-The goal is to have it be able to load rom files and function as an emulator to run old games, and possibly newly written new ones.
+The goal is to have it be able to load rom files and function as an emulator to run old games, and possibly newly written ones.
