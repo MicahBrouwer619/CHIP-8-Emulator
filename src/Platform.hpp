@@ -1,8 +1,8 @@
 #pragma once
 
 #include <cstdint>
-#include <SDL.h>
 #include <glad/gl.h>
+#include <SDL.h>
 
 
 class Platform
