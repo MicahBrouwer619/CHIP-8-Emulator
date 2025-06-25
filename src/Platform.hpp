@@ -1,10 +1,8 @@
 #pragma once
 
 #include <cstdint>
-#include <glad.h>
-#include <SDL.h>
-
-
+#include <glad/glad.h>
+#include <SDL3/SDL.h>
 class Platform
 {
 	friend class Imgui;
