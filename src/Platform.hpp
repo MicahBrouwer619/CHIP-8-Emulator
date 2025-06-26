@@ -1,10 +1,8 @@
 #pragma once
 
 #include <cstdint>
-#include <†SDL.h>
-#include <glad/gl.h>
-
-
+#include <glad/glad.h>
+#include <SDL3/SDL.h>
 class Platform
 {
 	friend class Imgui;
@@ -17,8 +15,6 @@ public:
 
 private:
 	SDL_Window* window{};
-	SDL_GLContext gl_context{};
-	GLuint framebuffer_texture;
 	SDL_Renderer* renderer{};
 	SDL_Texture* texture{};
 };
