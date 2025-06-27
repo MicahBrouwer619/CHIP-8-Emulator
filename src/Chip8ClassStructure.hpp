@@ -1,32 +1,26 @@
-#pragma once
-
 #include <cstdint>
+#include <chrono>
 #include <random>
-
-
-const unsigned int KEY_COUNT = 16;
-const unsigned int MEMORY_SIZE = 4096;
-const unsigned int REGISTER_COUNT = 16;
-const unsigned int STACK_LEVELS = 16;
-const unsigned int VIDEO_HEIGHT = 32;
-const unsigned int VIDEO_WIDTH = 64;
-
 
 class Chip8
 {
+
 public:
 	Chip8();
-	void LoadROM(char const* filename);
+	void LoadROM(char const *filename);
 	void Cycle();
 
-	uint8_t keypad[KEY_COUNT]{};
-	uint32_t video[VIDEO_WIDTH * VIDEO_HEIGHT]{};
+	uint8_t keypad[16]{};
+	uint32_t video[32 * 16]{};
 
 private:
 	void Table0();
 	void Table8();
 	void TableE();
 	void TableF();
+
+	// Do nothing
+	void OP_NULL();
 
 	// Do nothing
 	void OP_NULL();
@@ -133,53 +127,32 @@ private:
 	// LD Vx, [I]
 	void OP_Fx65();
 
-	uint8_t memory[MEMORY_SIZE]{};
-	uint8_t registers[REGISTER_COUNT]{};
+	//16 registers
+	uint8_t registers[16]{};
+	//4k of memory
+	uint8_t memory[4096]{};
+	//index register
 	uint16_t index{};
+	//program counter
 	uint16_t pc{};
-	uint8_t delayTimer{};
-	uint8_t soundTimer{};
-	uint16_t stack[STACK_LEVELS]{};
+	//16-level stack
+	uint16_t stack[16]{};
+	//8-bit stack pointer
 	uint8_t sp{};
-	uint16_t opcode{};
+	//8-bit delay timer
+	uint8_t delayTimer{};
+	//8-bit sound timer
+	uint8_t soundTimer{};
+	//32 opcodes
+	uint16_t opcode;
 
 	std::default_random_engine randGen;
 	std::uniform_int_distribution<uint8_t> randByte;
 
 	typedef void (Chip8::*Chip8Func)();
-	Chip8Func table[0xF + 1];
-	Chip8Func table0[0xE + 1];
-	Chip8Func table8[0xE + 1];
-	Chip8Func tableE[0xE + 1];
-	Chip8Func tableF[0x65 + 1];
-
-	void Table0()
-	{
-		((*this).*(table0[opcode & 0x000Fu]))();
-	}
-
-	void Table8()
-	{
-		((*this).*(table8[opcode & 0x000Fu]))();
-	}
-
-	void TableE()
-	{
-		((*this).*(tableE[opcode & 0x000Fu]))();
-	}
-
-	void TableF()
-	{
-		((*this).*(tableF[opcode & 0x00FFu]))();
-	}
-
-	void OP_NULL()
-	{}
-
-	typedef void (Chip8::*Chip8Func)();
-	Chip8Func table[0xF + 1];
-	Chip8Func table0[0xE + 1];
-	Chip8Func table8[0xE + 1];
-	Chip8Func tableE[0xE + 1];
-	Chip8Func tableF[0x65 + 1];
+	Chip8Func table[0xF + 1]{&Chip8::OP_NULL};
+	Chip8Func table0[0xE + 1]{&Chip8::OP_NULL};
+	Chip8Func table8[0xE + 1]{&Chip8::OP_NULL};
+	Chip8Func tableE[0xE + 1]{&Chip8::OP_NULL};
+	Chip8Func tableF[0x65 + 1]{&Chip8::OP_NULL};
 };
