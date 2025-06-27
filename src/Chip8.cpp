@@ -43,7 +43,6 @@ Chip8::Chip8()
 	{
 		memory[FONTSET_START_ADDRESS + i] = fontset[i];
 	}
-
 	// Initialize RNG
 	randByte = std::uniform_int_distribution<uint8_t>(0, 255U);
 
