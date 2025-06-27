@@ -1,20 +1,19 @@
-#pragma once
-
 #include <cstdint>
-#include <glad/glad.h>
-#include <SDL3/SDL.h>
+
+class SDL_Window;
+class SDL_Renderer;
+class SDL_Texture;
+
 class Platform
 {
-	friend class Imgui;
-
 public:
-	Platform(char const* title, int windowWidth, int windowHeight, int textureWidth, int textureHeight);
+	Platform(char const *title, int windowWidth, int windowHeight, int textureWidth, int textureHeight);
 	~Platform();
-	void Update(void const* buffer, int pitch);
-	bool ProcessInput(uint8_t* keys);
+	void Update(void const *buffer, int pitch);
+	bool ProcessInput(uint8_t *keys);
 
 private:
-	SDL_Window* window{};
-	SDL_Renderer* renderer{};
-	SDL_Texture* texture{};
+	SDL_Window *window{};
+	SDL_Renderer *renderer{};
+	SDL_Texture *texture{};
 };
