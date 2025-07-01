@@ -3,9 +3,7 @@
     {
       "name": "Linux",
       "includePath": [
-        "${workspaceFolder}/**",
-        "${workspaceFolder}/SDL3-3.2.16/include",
-        "${workspaceFolder}/glad/include"
+        "${workspaceFolder}/**"
       ],
       "defines": [],
       "compilerPath": "/usr/bin/g++",

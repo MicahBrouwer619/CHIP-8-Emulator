@@ -5,6 +5,10 @@
 #include <cstdint>
 #include <cstring>
 
+// Define CHIP-8 display dimensions
+const unsigned int VIDEO_WIDTH = 64;
+const unsigned int VIDEO_HEIGHT = 32;
+
 //Since 0x000 to 0x1FF is reserved, the ROM instructions must start at 0x200
 const unsigned int START_ADDRESS = 0x200;
 
