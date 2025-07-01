@@ -15,7 +15,7 @@ Platform::Platform(char const* title, int windowWidth, int windowHeight, int tex
         std::exit(1);
     }
 
-    renderer = SDL_CreateRenderer(window, nullptr, SDL_RENDERER_ACCELERATED);
+    renderer = SDL_CreateRenderer(window, nullptr);
     if (!renderer) {
         std::cerr << "SDL_CreateRenderer Error: " << SDL_GetError() << std::endl;
         std::exit(1);
