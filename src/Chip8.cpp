@@ -5,6 +5,15 @@
 #include <cstdint>
 #include <cstring>
 
+// Define CHIP-8 display width and height if not already defined
+#ifndef VIDEO_WIDTH
+#define VIDEO_WIDTH 64
+#endif
+
+#ifndef VIDEO_HEIGHT
+#define VIDEO_HEIGHT 32
+#endif
+
 //Since 0x000 to 0x1FF is reserved, the ROM instructions must start at 0x200
 const unsigned int START_ADDRESS = 0x200;
 

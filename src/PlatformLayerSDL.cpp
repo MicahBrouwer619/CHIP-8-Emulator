@@ -1,6 +1,6 @@
 
 #include "Platform.hpp"
-#include <SDL2/SDL.h>
+#include <SDL3/SDL.h>
 
 Platform::Platform(char const* title, int windowWidth, int windowHeight, int textureWidth, int textureHeight)
 {
@@ -26,7 +26,7 @@ void Platform::Update(void const* buffer, int pitch)
 {
 	SDL_UpdateTexture(texture, nullptr, buffer, pitch);
 	SDL_RenderClear(renderer);
-	SDL_RenderCopy(renderer, texture, nullptr, nullptr);
+	SDL_RenderTexture(renderer, texture, nullptr, nullptr);
 	SDL_RenderPresent(renderer);
 }
 
@@ -47,7 +47,7 @@ bool Platform::ProcessInput(uint8_t* keys)
 
 			case SDL_KEYDOWN:
 			{
-				switch (event.key.keysym.sym)
+				switch (event.key.key)
 				{
 					case SDLK_ESCAPE:
 					{
