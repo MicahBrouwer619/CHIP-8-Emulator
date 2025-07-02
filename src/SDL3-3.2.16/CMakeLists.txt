@@ -2760,26 +2760,6 @@ elseif(PSP)
   endif()
 
   set(SDL_THREAD_PSP 1)
-  sdl_glob_sources(
-    "${SDL3_SOURCE_DIR}/src/thread/generic/SDL_syscond.c"
-    "${SDL3_SOURCE_DIR}/src/thread/generic/SDL_systls.c"
-    "${SDL3_SOURCE_DIR}/src/thread/generic/SDL_sysrwlock.c"
-    "${SDL3_SOURCE_DIR}/src/thread/psp/*.c"
-  )
-  set(HAVE_SDL_THREADS TRUE)
-
-  sdl_glob_sources("${SDL3_SOURCE_DIR}/src/locale/psp/*.c")
-  set(HAVE_SDL_LOCALE TRUE)
-
-  set(SDL_TIME_PSP 1)
-  sdl_glob_sources("${SDL3_SOURCE_DIR}/src/time/psp/*.c")
-  set(HAVE_SDL_TIME TRUE)
-
-  set(SDL_TIMER_PSP 1)
-  sdl_glob_sources("${SDL3_SOURCE_DIR}/src/timer/psp/*.c")
-  set(HAVE_SDL_TIMERS TRUE)
-
-  if(SDL_VIDEO)
     set(SDL_VIDEO_DRIVER_PSP 1)
     set(SDL_VIDEO_RENDER_PSP 1)
     sdl_glob_sources("${SDL3_SOURCE_DIR}/src/video/psp/*.c")
