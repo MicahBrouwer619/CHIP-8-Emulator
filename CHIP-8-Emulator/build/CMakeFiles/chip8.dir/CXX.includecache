@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/Platform.hpp
+cstdint
+-
+
+/workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/PlatformLayerSDL.cpp
+Platform.hpp
+/workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/Platform.hpp
+SDL2/SDL.h
+-
+iostream
+-
+
