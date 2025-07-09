@@ -1,23 +1,20 @@
-cmake_minimum_required(VERSION 3.16)
-project(CHIP8-Emulator)
+cmake_minimum_required(VERSION 3.14)
+project(chip8)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 
-find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIRS})
+include_directories(${CMAKE_SOURCE_DIR}/external/glad/include)
 
-add_executable(chip8
-    src/main.cpp
-    src/Chip8.cpp
-    src/PlatformLayerSDL.cpp
-    src/Chip8ClassStructure.cpp
-    src/Platform.cpp
-    # add other source files as needed
-)
+add_subdirectory(3rdParty/glad EXCLUDE_FROM_ALL)
+add_subdirectory(3rdParty/sdl-2.0.20 EXCLUDE_FROM_ALL)
+add_subdirectory(3rdParty/imgui-1.88 EXCLUDE_FROM_ALL)
 
-target_include_directories(chip8 PRIVATE
-    ${SDL2_INCLUDE_DIRS}
-    src
-)
+add_executable(
+    chip8
+    Source/Chip8.cpp
+    Source/Main.cpp
+    Source/Platform.cpp)
 
-target_link_libraries(chip8 ${SDL2_LIBRARIES})
+target_compile_options(chip8 PRIVATE -Wall)
+
+target_link_libraries(chip8 PRIVATE glad SDL2 imgui)

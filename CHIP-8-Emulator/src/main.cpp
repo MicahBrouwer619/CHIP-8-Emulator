@@ -6,8 +6,6 @@
 
 int main(int argc, char** argv)
 {
-    int VIDEO_WIDTH = 32;
-    int VIDEO_HEIGHT = 16;
 	if (argc != 4)
 	{
 		std::cerr << "Usage: " << argv[0] << " <Scale> <Delay> <ROM>\n";
