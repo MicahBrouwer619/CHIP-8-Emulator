@@ -3,7 +3,7 @@ project(chip8)
 
 set(CMAKE_CXX_STANDARD 11)
 
-include_directories(${CMAKE_SOURCE_DIR}/external/glad/include)
+include_directories(${CMAKE_SOURCE_DIR}/glad/include)
 
 add_subdirectory(3rdParty/glad EXCLUDE_FROM_ALL)
 add_subdirectory(3rdParty/sdl-2.0.20 EXCLUDE_FROM_ALL)
@@ -13,7 +13,9 @@ add_executable(
     chip8
     Source/Chip8.cpp
     Source/Main.cpp
-    Source/Platform.cpp)
+    Source/Platform.cpp
+    ${CMAKE_SOURCE_DIR}/glad/src/glad.c
+)
 
 target_compile_options(chip8 PRIVATE -Wall)
 
