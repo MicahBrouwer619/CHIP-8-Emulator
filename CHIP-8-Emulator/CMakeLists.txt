@@ -17,4 +17,4 @@ add_executable(
 )
 
 target_compile_options(chip8 PRIVATE -Wall)
-target_link_libraries(chip8 PRIVATE glad ${SDL2_LIBRARIES} imgui)
+target_link_libraries(chip8 PRIVATE ${SDL2_LIBRARIES})
