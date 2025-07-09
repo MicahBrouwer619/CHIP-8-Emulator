@@ -1,4 +1,4 @@
-#include "Chip8.hpp"
+#include "Chip8ClassStructure.hpp"
 #include "Platform.hpp"
 #include <chrono>
 #include <iostream>
