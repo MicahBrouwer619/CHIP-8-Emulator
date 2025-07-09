@@ -151,7 +151,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=CHIP8-Emulator
+CMAKE_PROJECT_NAME:STATIC=chip8
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -220,6 +220,12 @@ SDL2_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/SDL2
 
 //The directory containing a CMake configuration file for SDL3.
 SDL3_DIR:PATH=SDL3_DIR-NOTFOUND
+
+//Value Computed by CMake
+chip8_BINARY_DIR:STATIC=/workspaces/CHIP-8-Emulator/CHIP-8-Emulator/build
+
+//Value Computed by CMake
+chip8_SOURCE_DIR:STATIC=/workspaces/CHIP-8-Emulator/CHIP-8-Emulator
 
 
 ########################

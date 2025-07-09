@@ -123,6 +123,33 @@ chip8/fast:
 	$(MAKE) -f CMakeFiles/chip8.dir/build.make CMakeFiles/chip8.dir/build
 .PHONY : chip8/fast
 
+glad/src/glad.o: glad/src/glad.c.o
+
+.PHONY : glad/src/glad.o
+
+# target to build an object file
+glad/src/glad.c.o:
+	$(MAKE) -f CMakeFiles/chip8.dir/build.make CMakeFiles/chip8.dir/glad/src/glad.c.o
+.PHONY : glad/src/glad.c.o
+
+glad/src/glad.i: glad/src/glad.c.i
+
+.PHONY : glad/src/glad.i
+
+# target to preprocess a source file
+glad/src/glad.c.i:
+	$(MAKE) -f CMakeFiles/chip8.dir/build.make CMakeFiles/chip8.dir/glad/src/glad.c.i
+.PHONY : glad/src/glad.c.i
+
+glad/src/glad.s: glad/src/glad.c.s
+
+.PHONY : glad/src/glad.s
+
+# target to generate assembly for a file
+glad/src/glad.c.s:
+	$(MAKE) -f CMakeFiles/chip8.dir/build.make CMakeFiles/chip8.dir/glad/src/glad.c.s
+.PHONY : glad/src/glad.c.s
+
 src/Chip8.o: src/Chip8.cpp.o
 
 .PHONY : src/Chip8.o
@@ -149,60 +176,6 @@ src/Chip8.s: src/Chip8.cpp.s
 src/Chip8.cpp.s:
 	$(MAKE) -f CMakeFiles/chip8.dir/build.make CMakeFiles/chip8.dir/src/Chip8.cpp.s
 .PHONY : src/Chip8.cpp.s
-
-src/Chip8ClassStructure.o: src/Chip8ClassStructure.cpp.o
-
-.PHONY : src/Chip8ClassStructure.o
-
-# target to build an object file
-src/Chip8ClassStructure.cpp.o:
-	$(MAKE) -f CMakeFiles/chip8.dir/build.make CMakeFiles/chip8.dir/src/Chip8ClassStructure.cpp.o
-.PHONY : src/Chip8ClassStructure.cpp.o
-
-src/Chip8ClassStructure.i: src/Chip8ClassStructure.cpp.i
-
-.PHONY : src/Chip8ClassStructure.i
-
-# target to preprocess a source file
-src/Chip8ClassStructure.cpp.i:
-	$(MAKE) -f CMakeFiles/chip8.dir/build.make CMakeFiles/chip8.dir/src/Chip8ClassStructure.cpp.i
-.PHONY : src/Chip8ClassStructure.cpp.i
-
-src/Chip8ClassStructure.s: src/Chip8ClassStructure.cpp.s
-
-.PHONY : src/Chip8ClassStructure.s
-
-# target to generate assembly for a file
-src/Chip8ClassStructure.cpp.s:
-	$(MAKE) -f CMakeFiles/chip8.dir/build.make CMakeFiles/chip8.dir/src/Chip8ClassStructure.cpp.s
-.PHONY : src/Chip8ClassStructure.cpp.s
-
-src/Platform.o: src/Platform.cpp.o
-
-.PHONY : src/Platform.o
-
-# target to build an object file
-src/Platform.cpp.o:
-	$(MAKE) -f CMakeFiles/chip8.dir/build.make CMakeFiles/chip8.dir/src/Platform.cpp.o
-.PHONY : src/Platform.cpp.o
-
-src/Platform.i: src/Platform.cpp.i
-
-.PHONY : src/Platform.i
-
-# target to preprocess a source file
-src/Platform.cpp.i:
-	$(MAKE) -f CMakeFiles/chip8.dir/build.make CMakeFiles/chip8.dir/src/Platform.cpp.i
-.PHONY : src/Platform.cpp.i
-
-src/Platform.s: src/Platform.cpp.s
-
-.PHONY : src/Platform.s
-
-# target to generate assembly for a file
-src/Platform.cpp.s:
-	$(MAKE) -f CMakeFiles/chip8.dir/build.make CMakeFiles/chip8.dir/src/Platform.cpp.s
-.PHONY : src/Platform.cpp.s
 
 src/PlatformLayerSDL.o: src/PlatformLayerSDL.cpp.o
 
@@ -267,15 +240,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... chip8"
+	@echo "... glad/src/glad.o"
+	@echo "... glad/src/glad.i"
+	@echo "... glad/src/glad.s"
 	@echo "... src/Chip8.o"
 	@echo "... src/Chip8.i"
 	@echo "... src/Chip8.s"
-	@echo "... src/Chip8ClassStructure.o"
-	@echo "... src/Chip8ClassStructure.i"
-	@echo "... src/Chip8ClassStructure.s"
-	@echo "... src/Platform.o"
-	@echo "... src/Platform.i"
-	@echo "... src/Platform.s"
 	@echo "... src/PlatformLayerSDL.o"
 	@echo "... src/PlatformLayerSDL.i"
 	@echo "... src/PlatformLayerSDL.s"

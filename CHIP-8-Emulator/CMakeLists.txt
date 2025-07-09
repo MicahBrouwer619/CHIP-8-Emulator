@@ -5,18 +5,16 @@ set(CMAKE_CXX_STANDARD 11)
 
 include_directories(${CMAKE_SOURCE_DIR}/glad/include)
 
-add_subdirectory(3rdParty/glad EXCLUDE_FROM_ALL)
-add_subdirectory(3rdParty/sdl-2.0.20 EXCLUDE_FROM_ALL)
-add_subdirectory(3rdParty/imgui-1.88 EXCLUDE_FROM_ALL)
+find_package(SDL2 REQUIRED)
+include_directories(${SDL2_INCLUDE_DIRS})
 
 add_executable(
     chip8
-    Source/Chip8.cpp
-    Source/Main.cpp
-    Source/Platform.cpp
+    src/Chip8.cpp
+    src/main.cpp
+    src/PlatformLayerSDL.cpp
     ${CMAKE_SOURCE_DIR}/glad/src/glad.c
 )
 
 target_compile_options(chip8 PRIVATE -Wall)
-
-target_link_libraries(chip8 PRIVATE glad SDL2 imgui)
+target_link_libraries(chip8 PRIVATE glad ${SDL2_LIBRARIES} imgui)

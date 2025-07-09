@@ -57,22 +57,9 @@ include CMakeFiles/chip8.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/chip8.dir/flags.make
 
-CMakeFiles/chip8.dir/src/main.cpp.o: CMakeFiles/chip8.dir/flags.make
-CMakeFiles/chip8.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CHIP-8-Emulator/CHIP-8-Emulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/chip8.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chip8.dir/src/main.cpp.o -c /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/main.cpp
-
-CMakeFiles/chip8.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chip8.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/main.cpp > CMakeFiles/chip8.dir/src/main.cpp.i
-
-CMakeFiles/chip8.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chip8.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/main.cpp -o CMakeFiles/chip8.dir/src/main.cpp.s
-
 CMakeFiles/chip8.dir/src/Chip8.cpp.o: CMakeFiles/chip8.dir/flags.make
 CMakeFiles/chip8.dir/src/Chip8.cpp.o: ../src/Chip8.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CHIP-8-Emulator/CHIP-8-Emulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/chip8.dir/src/Chip8.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CHIP-8-Emulator/CHIP-8-Emulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/chip8.dir/src/Chip8.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chip8.dir/src/Chip8.cpp.o -c /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/Chip8.cpp
 
 CMakeFiles/chip8.dir/src/Chip8.cpp.i: cmake_force
@@ -82,6 +69,19 @@ CMakeFiles/chip8.dir/src/Chip8.cpp.i: cmake_force
 CMakeFiles/chip8.dir/src/Chip8.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chip8.dir/src/Chip8.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/Chip8.cpp -o CMakeFiles/chip8.dir/src/Chip8.cpp.s
+
+CMakeFiles/chip8.dir/src/main.cpp.o: CMakeFiles/chip8.dir/flags.make
+CMakeFiles/chip8.dir/src/main.cpp.o: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CHIP-8-Emulator/CHIP-8-Emulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/chip8.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chip8.dir/src/main.cpp.o -c /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/main.cpp
+
+CMakeFiles/chip8.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chip8.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/main.cpp > CMakeFiles/chip8.dir/src/main.cpp.i
+
+CMakeFiles/chip8.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chip8.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/main.cpp -o CMakeFiles/chip8.dir/src/main.cpp.s
 
 CMakeFiles/chip8.dir/src/PlatformLayerSDL.cpp.o: CMakeFiles/chip8.dir/flags.make
 CMakeFiles/chip8.dir/src/PlatformLayerSDL.cpp.o: ../src/PlatformLayerSDL.cpp
@@ -96,51 +96,36 @@ CMakeFiles/chip8.dir/src/PlatformLayerSDL.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chip8.dir/src/PlatformLayerSDL.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/PlatformLayerSDL.cpp -o CMakeFiles/chip8.dir/src/PlatformLayerSDL.cpp.s
 
-CMakeFiles/chip8.dir/src/Chip8ClassStructure.cpp.o: CMakeFiles/chip8.dir/flags.make
-CMakeFiles/chip8.dir/src/Chip8ClassStructure.cpp.o: ../src/Chip8ClassStructure.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CHIP-8-Emulator/CHIP-8-Emulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/chip8.dir/src/Chip8ClassStructure.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chip8.dir/src/Chip8ClassStructure.cpp.o -c /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/Chip8ClassStructure.cpp
+CMakeFiles/chip8.dir/glad/src/glad.c.o: CMakeFiles/chip8.dir/flags.make
+CMakeFiles/chip8.dir/glad/src/glad.c.o: ../glad/src/glad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CHIP-8-Emulator/CHIP-8-Emulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/chip8.dir/glad/src/glad.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/chip8.dir/glad/src/glad.c.o   -c /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/glad/src/glad.c
 
-CMakeFiles/chip8.dir/src/Chip8ClassStructure.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chip8.dir/src/Chip8ClassStructure.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/Chip8ClassStructure.cpp > CMakeFiles/chip8.dir/src/Chip8ClassStructure.cpp.i
+CMakeFiles/chip8.dir/glad/src/glad.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/chip8.dir/glad/src/glad.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/glad/src/glad.c > CMakeFiles/chip8.dir/glad/src/glad.c.i
 
-CMakeFiles/chip8.dir/src/Chip8ClassStructure.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chip8.dir/src/Chip8ClassStructure.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/Chip8ClassStructure.cpp -o CMakeFiles/chip8.dir/src/Chip8ClassStructure.cpp.s
-
-CMakeFiles/chip8.dir/src/Platform.cpp.o: CMakeFiles/chip8.dir/flags.make
-CMakeFiles/chip8.dir/src/Platform.cpp.o: ../src/Platform.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CHIP-8-Emulator/CHIP-8-Emulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/chip8.dir/src/Platform.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chip8.dir/src/Platform.cpp.o -c /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/Platform.cpp
-
-CMakeFiles/chip8.dir/src/Platform.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chip8.dir/src/Platform.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/Platform.cpp > CMakeFiles/chip8.dir/src/Platform.cpp.i
-
-CMakeFiles/chip8.dir/src/Platform.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chip8.dir/src/Platform.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/src/Platform.cpp -o CMakeFiles/chip8.dir/src/Platform.cpp.s
+CMakeFiles/chip8.dir/glad/src/glad.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/chip8.dir/glad/src/glad.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspaces/CHIP-8-Emulator/CHIP-8-Emulator/glad/src/glad.c -o CMakeFiles/chip8.dir/glad/src/glad.c.s
 
 # Object files for target chip8
 chip8_OBJECTS = \
-"CMakeFiles/chip8.dir/src/main.cpp.o" \
 "CMakeFiles/chip8.dir/src/Chip8.cpp.o" \
+"CMakeFiles/chip8.dir/src/main.cpp.o" \
 "CMakeFiles/chip8.dir/src/PlatformLayerSDL.cpp.o" \
-"CMakeFiles/chip8.dir/src/Chip8ClassStructure.cpp.o" \
-"CMakeFiles/chip8.dir/src/Platform.cpp.o"
+"CMakeFiles/chip8.dir/glad/src/glad.c.o"
 
 # External object files for target chip8
 chip8_EXTERNAL_OBJECTS =
 
-chip8: CMakeFiles/chip8.dir/src/main.cpp.o
 chip8: CMakeFiles/chip8.dir/src/Chip8.cpp.o
+chip8: CMakeFiles/chip8.dir/src/main.cpp.o
 chip8: CMakeFiles/chip8.dir/src/PlatformLayerSDL.cpp.o
-chip8: CMakeFiles/chip8.dir/src/Chip8ClassStructure.cpp.o
-chip8: CMakeFiles/chip8.dir/src/Platform.cpp.o
+chip8: CMakeFiles/chip8.dir/glad/src/glad.c.o
 chip8: CMakeFiles/chip8.dir/build.make
 chip8: CMakeFiles/chip8.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/CHIP-8-Emulator/CHIP-8-Emulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable chip8"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/CHIP-8-Emulator/CHIP-8-Emulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable chip8"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chip8.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
