@@ -1,15 +1,15 @@
 #include "Platform.hpp"
 #include <glad/glad.h>
 #include <SDL.h>
-#include <iostream>
 
 
 Platform::Platform(char const* title, int windowWidth, int windowHeight, int textureWidth, int textureHeight)
 {
-	if (SDL_Init(SDL_INIT_VIDEO) != 0) {
-		std::cerr << "SDL_Init Error: " << SDL_GetError() << std::endl;
-		std::exit(EXIT_FAILURE);
-	}
+	SDL_Init(SDL_INIT_VIDEO);
+
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
 
 	window = SDL_CreateWindow(
 		title,
@@ -17,21 +17,9 @@ Platform::Platform(char const* title, int windowWidth, int windowHeight, int tex
 		windowWidth, windowHeight,
 		SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
 
-	if (!window) {
-		std::cerr << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
-		std::exit(EXIT_FAILURE);
-	}
-
 	gl_context = SDL_GL_CreateContext(window);
-	if (!gl_context) {
-		std::cerr << "SDL_GL_CreateContext Error: " << SDL_GetError() << std::endl;
-		std::exit(EXIT_FAILURE);
-	}
-
-	if (!gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress)) {
-		std::cerr << "Failed to initialize GLAD" << std::endl;
-		std::exit(EXIT_FAILURE);
-	}
+	SDL_GL_SetSwapInterval(1);
+	gladLoadGL((GLADloadfunc)SDL_GL_GetProcAddress);
 
 	glGenTextures(1, &framebuffer_texture);
 	glBindTexture(GL_TEXTURE_2D, framebuffer_texture);
@@ -255,3 +243,4 @@ bool Platform::ProcessInput(uint8_t* keys)
 
 	return quit;
 }
+
