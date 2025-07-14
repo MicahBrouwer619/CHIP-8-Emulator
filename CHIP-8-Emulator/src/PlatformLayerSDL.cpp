@@ -19,7 +19,7 @@ Platform::Platform(char const* title, int windowWidth, int windowHeight, int tex
 
 	gl_context = SDL_GL_CreateContext(window);
 	SDL_GL_SetSwapInterval(1);
-	gladLoadGL((GLADloadfunc)SDL_GL_GetProcAddress);
+	gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress);
 
 	glGenTextures(1, &framebuffer_texture);
 	glBindTexture(GL_TEXTURE_2D, framebuffer_texture);
